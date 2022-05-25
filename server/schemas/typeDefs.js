@@ -29,10 +29,15 @@ const typeDefs = gql`
 
     type Query {
         users: [User]
+        user(username: String!): User
+        stories: [Story]
+        story(storyTitle: String, writers: [String]): Story
     }
 
     type Mutation {
         addUser(username: String!, email: String!, password: String!): User
+        addStory(storyTitle: String!, genre: String!, storyType: String!, lineCount: String, writerCount: String, writers: [String!]): Story
+        addLine(lineContent: String!, username: String!): Story
     }
 `;
 
