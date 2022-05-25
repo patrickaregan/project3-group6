@@ -65,7 +65,7 @@ const resolvers = {
             const [writers] = args.writers;
 
             writers.forEach(writer => {
-                await User.findByIdAndUpdate(
+                User.findByIdAndUpdate(
                     { _id: writer._id },
                     { $push: { stories: newStory._id } },
                     { new: true }
