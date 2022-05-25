@@ -59,6 +59,23 @@ const resolvers = {
         addUser: async (parent, args) => {
             const newUser = await User.create(args);
             return newUser;
+        },
+        addStory: async (parent, args) => {
+            const newStory = await Story.create(args);
+            const [writers] = args.writers;
+
+            writers.forEach(writer => {
+                await User.findByIdAndUpdate(
+                    { _id: writer._id },
+                    { $push: { stories: newStory._id } },
+                    { new: true }
+                );
+            });
+
+            return newStory;
+        },
+        addLine: async (parent, { lineContent, username }) => {
+            
         }
     }
 };

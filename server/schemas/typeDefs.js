@@ -16,6 +16,7 @@ const typeDefs = gql`
         genre: String
         storyType: String
         lineCount: Int
+        lines: [Line]
         writerCount: Int
         writers: [User]
     }
