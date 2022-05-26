@@ -29,7 +29,7 @@ const storySchema = new Schema(
 		min: 10,
 		max: 10000
 	},
-    writers: [userSchema],
+  writers: [userSchema],
 	lines: [lineSchema]
   },
   {
@@ -44,7 +44,7 @@ storySchema.virtual('writerCount').get(function() {
 });
 
 storySchema.virtual('lineCount').get(function() {
-  return this.writers.length;
+  return this.lines.length;
 });
 
 

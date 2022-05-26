@@ -91,8 +91,14 @@ const resolvers = {
 
             return newStory;
         },
-        addLine: async (parent, { lineContent, username }) => {
-            
+        addLine: async (parent, { storyId, lineContent, username }) => {
+            const updatedStory = await Story.findOneAndUpdate(
+                { _id: storyId },
+                { $push: { lines: { lineContent, username } } },
+                { new: true, runValidators: true }
+            );
+
+            return updatedStory;
         }
     }
 };
