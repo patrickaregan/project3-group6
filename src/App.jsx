@@ -1,14 +1,16 @@
 import "./App.scss";
-import Navbar from "./components/Navbar/Navbar";
-import Login from "./components/Login/Login";
-import Signup from "./components/Signup/Signup";
+// import Navbar from "./components/Navbar/Navbar";
+// import Login from "./components/Login/Login";
+// import Signup from "./components/Signup/Signup";
+import Dashboard from "./components/Dashboard/Dashboard";
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      {/* <Navbar />
       <Login />
-      <Signup />
+      <Signup /> */}
+      <Dashboard/>
     </div>
   );
 }

@@ -1,0 +1,43 @@
+.dashboardMain {
+  .hero-container {
+    background-image: url(https://t4.ftcdn.net/jpg/03/03/73/47/360_F_303734740_Us6tBZOZxqkfEmFgpf18Ti3gUIIGqo6A.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 61.1vh;
+    width: 100vw;
+  }
+  .scrolling-container {
+    border: solid black 3px;
+    background-image: url(https://wallpaperaccess.com/full/415267.jpg);
+    height: 60vh;
+    width: 100vw;
+    .scrollHeading {
+      border: solid black 3px;
+      border-radius: 20px;
+      background-color: rgba(255, 255, 255, 0.5);
+      width: 80vw;
+    }
+    .bookContainer {
+      background: #eee;
+      display: flex;
+    }
+
+    .bookCell {
+      width: 66%;
+      height: 200px;
+      margin-right: 10px;
+      background: #8c8;
+      counter-increment: bookCell;
+    }
+
+    /* cell number */
+    .bookCell:before {
+      display: block;
+      text-align: center;
+      content: counter(bookCell);
+      line-height: 200px;
+      font-size: 80px;
+      color: white;
+    }
+  }
+}
