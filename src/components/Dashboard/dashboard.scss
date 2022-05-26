@@ -17,16 +17,19 @@
       background-color: rgba(255, 255, 255, 0.5);
       width: 80vw;
     }
+
     .bookContainer {
-      background: #eee;
       display: flex;
+      flex-direction: row;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
     }
 
     .bookCell {
-      width: 66%;
-      height: 200px;
+      width: 66vw;
+      height: 60vh;
       margin-right: 10px;
-      background: #8c8;
+      background: rgba(255, 255, 255, 0.5);;
       counter-increment: bookCell;
     }
 

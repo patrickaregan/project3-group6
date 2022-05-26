@@ -2,15 +2,14 @@ import "./dashboard.scss";
 
 export default function Dashboard() {
   return (
-    <div className="dashboardMain">
-      <div className="hero-container"></div>
-      <div className="scrolling-container">
-        <div className="scrollHeading">
-          <h2>Featured Stories</h2>
+    <div class="dashboardMain">
+      <div class="hero-container"></div>
+      <div class="scrolling-container">
+        <div class="scrollHeading">
+          <h2>Your Stories</h2>
         </div>
         <div
           class="bookContainer"
-          data-flickity-options='{ "wrapAround": true }'
         >
           <div class="bookCell"></div>
           <div class="bookCell"></div>
