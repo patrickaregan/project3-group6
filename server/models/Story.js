@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-const User = require('./User');
+const userSchema = require('./User');
 const lineSchema = require('./Line');
 const dateFormat = require('../utils/dateFormat');
 
@@ -29,12 +29,7 @@ const storySchema = new Schema(
 		min: 10,
 		max: 10000
 	},
-  writers: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'User'
-    }
-  ],
+  writers: [userSchema],
 	lines: [lineSchema]
   },
   {
