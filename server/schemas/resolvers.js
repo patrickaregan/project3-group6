@@ -1,5 +1,6 @@
 const { AuthenticationError } = require('apollo-server-express');
-// const { User, Story } = require('../models');
+const {signToken} = require('../utils/auth');
+const { User, Story } = require('../models');
 
 const resolvers = {
     Query: {
@@ -8,23 +9,10 @@ const resolvers = {
             .select('-__v -password')
             .populate('stories')
         },
-        user: async (parent, args) => {
-            let user = {};
-
-            switch(args) {
-                case args._id:
-                    user = await User.findOne({ _id })
-                    .select('-__v')
-                    .populate('stories')
-                    break;
-                case args.username:
-                    user = await User.findOne({ storyTitle })
-                    .select('-__v')
-                    .populate('stories')
-                    break;
-                default:
-                    break;
-            }
+        user: async (parent, { username }) => {
+            const user = await User.findOne({ username })
+            .select('-__v')
+            .populate('stories');
 
             return user;
         },
@@ -56,9 +44,25 @@ const resolvers = {
     },
 
     Mutation: {
+        login: async (parent, { email, password }) => {
+            const user = await User.findOne({ email })
+            if (!user) {
+                throw new AuthenticationError("Incorrect credentials.");
+            }
+
+            const correctPassword = await user.isCorrectPassword(password);
+            if (!correctPassword) {
+                throw new AuthenticationError("Incorrect credentials.");
+            }
+
+            const token = signToken(user);
+            return { token, user };
+        },
         addUser: async (parent, args) => {
             const newUser = await User.create(args);
-            return newUser;
+            const token = signToken(newUser);
+
+            return { newUser, token };
         },
         addStory: async (parent, args) => {
             const newStory = await Story.create(args);
@@ -74,8 +78,14 @@ const resolvers = {
 
             return newStory;
         },
-        addLine: async (parent, { lineContent, username }) => {
-            
+        addLine: async (parent, { storyId, lineContent, username }) => {
+            const updatedStory = await Story.findOneAndUpdate(
+                { _id: storyId },
+                { $push: { lines: { lineContent, username } } },
+                { new: true, runValidators: true }
+            );
+
+            return updatedStory;
         }
     }
 };
