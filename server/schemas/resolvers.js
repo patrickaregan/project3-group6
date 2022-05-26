@@ -21,23 +21,11 @@ const resolvers = {
             .select('-__v')
             .populate('writers')
         },
-        story: async (parent, args) => {
-            let story = {};
-
-            switch(args) {
-                case args._id:
-                    story = await Story.findOne({ _id })
-                    .select('-__v')
-                    .populate('writers')
-                    break;
-                case args.storyTitle:
-                    story = await Story.findOne({ storyTitle })
-                    .select('-__v')
-                    .populate('writers')
-                    break;
-                default:
-                    break;
-            }
+        story: async (parent, { storyTitle }) => {
+            const story = await Story.findOne({ storyTitle })
+            .select('-__v')
+            .populate('lines')
+            .populate('writers')
 
             return story;
         }
@@ -64,8 +52,8 @@ const resolvers = {
 
             return { newUser, token };
         },
-        removeUser: async (parent, { userId }) => {
-            const deletedUser = await User.findOneAndDelete({ _id: userId });
+        removeUser: async (parent, { _id }) => {
+            const deletedUser = await User.findByIdAndDelete({ _id });
             return deletedUser;
         },
         addStory: async (parent, args) => {
