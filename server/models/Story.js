@@ -11,6 +11,10 @@ const storySchema = new Schema(
       minlength: 10,
       maxlength: 280
     },
+    username: {
+      type: String,
+      required: true
+    },
     createdAt: {
       type: Date,
       default: Date.now,
@@ -20,18 +24,18 @@ const storySchema = new Schema(
       type: String,
       required: true
     },
-	storyType: {
-		type: String,
-		required: true
-	},
-	lineCount: {
-		type: Number,
-		min: 10,
-		max: 10000
-	},
+	  storyType: {
+		  type: String,
+		  required: true
+	  },
+	  lineCount: {
+		  type: Number,
+		  min: 10,
+		  max: 10000
+	  },
     writers: [userSchema],
-	lines: [lineSchema]
-  },
+	  lines: [lineSchema]
+    },
   {
     toJSON: {
       getters: true
@@ -44,7 +48,7 @@ storySchema.virtual('writerCount').get(function() {
 });
 
 storySchema.virtual('lineCount').get(function() {
-  return this.writers.length;
+  return this.lines.length;
 });
 
 
