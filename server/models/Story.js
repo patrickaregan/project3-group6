@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-const userSchema = require('./User');
+const writerSchema = require('./Writer');
 const lineSchema = require('./Line');
 const dateFormat = require('../utils/dateFormat');
 
@@ -11,6 +11,10 @@ const storySchema = new Schema(
       minlength: 10,
       maxlength: 280
     },
+    username: {
+      type: String,
+      required: true
+    },
     createdAt: {
       type: Date,
       default: Date.now,
@@ -20,34 +24,24 @@ const storySchema = new Schema(
       type: String,
       required: true
     },
-	storyType: {
-		type: String,
-		required: true
-	},
-	lineCount: {
-		type: Number,
-		min: 10,
-		max: 10000
-	},
-    writers: [userSchema],
-	lines: [lineSchema]
-  },
+	  storyType: {
+		  type: String,
+		  required: true
+	  },
+	  lineCount: {
+		  type: Number,
+		  min: 10,
+		  max: 10000
+	  },
+	  writers: [writerSchema],
+    lines: [lineSchema]
+    },
   {
     toJSON: {
       getters: true
     }
   }
 );
-
-storySchema.virtual('writerCount').get(function() {
-  return this.writers.length;
-});
-
-storySchema.virtual('lineCount').get(function() {
-  return this.writers.length;
-});
-
-
 
 const Story = model('Story', storySchema);
 

@@ -1,0 +1,46 @@
+[
+    {
+        
+        "storyTitle" : "First Story dicta voluptas ut iusto et hic nam", 
+        "username" : "Jody.Eichmann",
+		"genre" : "Fiction",
+		"storyType" : "Free-For-All",
+		"lineCount" : 20,
+        "lines" : [ 
+            {
+                "lineContent" : "It all started at my senior prom.", 
+                "username" : "Tyree17"
+            } 
+        ],
+        "writers" : [ 
+            {
+                "username" : "Jody.Eichmann"
+            },
+            {
+                "username" : "Molly48"
+            }
+        ]
+    },
+	{
+        
+        "storyTitle" : "Second Story molestiae dicta voluptas ut iusto et hic nam", 
+        "username" : "Katlyn85",
+		"genre" : "Fiction",
+		"storyType" : "Free-For-All",
+		"lineCount" : 20,
+        "lines" : [ 
+            {
+                "lineContent" : "Mary had a little lamp issimos ex maxime sit voluptatem", 
+                "username" : "Josue67"
+            } 
+        ],
+        "writers" : [ 
+            {
+                "username" : "Lessie_Kautzer61"
+            },
+            {
+                "username" : "Elton_Heaney"
+            }
+        ]
+    }
+]
