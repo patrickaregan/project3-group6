@@ -7,12 +7,23 @@ export default function Navbar() {
     <div class="navbar">
       <div class="container">
         <div class="left">
-          {/* font awesome icon for logo */}
-          <FontAwesomeIcon icon={ faBookOpen } class="icon" />
-          {/* Browse, community, and searchbar */}
+          <FontAwesomeIcon icon={faBookOpen} class="icon" />
+        </div>
+        <div class="item-container">
+          <a href="#">Browse</a>
+        </div>
+        <div class="item-container">
+          <a href="#">Community</a>
+        </div>
+        <div class="item-container">
+          <input type="text" placeholder="Search.." />
         </div>
         <div class="right">
-          {/* hamburger menu */}
+          {/* <div class="hamburgerMenu">
+            <span class="line1"></span>
+            <span class="line2"></span>
+            <span class="line3"></span>
+          </div> */}
         </div>
       </div>
     </div>
