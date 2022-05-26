@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-const userSchema = require('./User');
+const User = require('./User');
 const lineSchema = require('./Line');
 const dateFormat = require('../utils/dateFormat');
 
@@ -29,7 +29,12 @@ const storySchema = new Schema(
 		min: 10,
 		max: 10000
 	},
-  writers: [userSchema],
+  writers: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'User'
+    }
+  ],
 	lines: [lineSchema]
   },
   {
@@ -43,9 +48,9 @@ storySchema.virtual('writerCount').get(function() {
   return this.writers.length;
 });
 
-storySchema.virtual('lineCount').get(function() {
-  return this.lines.length;
-});
+// storySchema.virtual('lineCount').get(function() {
+//   return this.lines.length;
+// });
 
 
 

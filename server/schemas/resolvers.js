@@ -9,23 +9,10 @@ const resolvers = {
             .select('-__v -password')
             .populate('stories')
         },
-        user: async (parent, args) => {
-            let user = {};
-
-            switch(args) {
-                case args._id:
-                    user = await User.findOne({ _id })
-                    .select('-__v')
-                    .populate('stories')
-                    break;
-                case args.username:
-                    user = await User.findOne({ storyTitle })
-                    .select('-__v')
-                    .populate('stories')
-                    break;
-                default:
-                    break;
-            }
+        user: async (parent, { username }) => {
+            const user = await User.findOne({ username })
+            .select('-__v')
+            .populate('stories');
 
             return user;
         },
@@ -73,7 +60,7 @@ const resolvers = {
         },
         addUser: async (parent, args) => {
             const newUser = await User.create(args);
-            const token = signToken(user);
+            const token = signToken(newUser);
 
             return { newUser, token };
         },
