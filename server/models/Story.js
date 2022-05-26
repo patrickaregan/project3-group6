@@ -43,9 +43,9 @@ storySchema.virtual('writerCount').get(function() {
   return this.writers.length;
 });
 
-// storySchema.virtual('lineCount').get(function() {
-//   return this.lines.length;
-// });
+storySchema.virtual('lineCount').get(function() {
+  return this.lines.length;
+});
 
 
 
