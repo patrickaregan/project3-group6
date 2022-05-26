@@ -3,4 +3,20 @@
     height: 80px;
     border: blue solid 3px;
     position: fixed;
+
+    .container {
+        padding: 10px 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .left {
+            display: flex;
+            align-items: center;
+            
+            .icon {
+                width: 15%;
+            }
+        }
+    }
 }
