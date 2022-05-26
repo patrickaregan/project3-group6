@@ -64,6 +64,10 @@ const resolvers = {
 
             return { newUser, token };
         },
+        removeUser: async (parent, { userId }) => {
+            const deletedUser = await User.findOneAndDelete({ _id: userId });
+            return deletedUser;
+        },
         addStory: async (parent, args) => {
             const newStory = await Story.create(args);
             const [writers] = args.writers;
