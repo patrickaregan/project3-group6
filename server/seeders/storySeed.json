@@ -1,0 +1,24 @@
+[
+    {
+        
+        "storyTitle" : "molestiae dicta voluptas ut iusto et hic nam", 
+        "username" : "Jody.Eichmann",
+		"genre" : "Fiction",
+		"storyType" : "Free-For-All",
+		"lineCount" : 20,
+        "lines" : [ 
+            {
+                "lineContent" : "as voluptatibus et ut quia officiis dignissimos ex maxime sit voluptatem", 
+                "username" : "Tyree17"
+            } 
+        ],
+        "writers" : [ 
+            {
+                "username" : "Jody.Eichmann"
+            },
+            {
+                "username" : "Molly48"
+            }
+        ]
+    }
+]
