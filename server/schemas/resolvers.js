@@ -116,7 +116,6 @@ const resolvers = {
         },
         editLine: async (parent, { storyId, lineId, lineContent }, context) => {
             if (context.user) {
-                const username = context.user.username;
                 const story = await Story.findOne({ _id: storyId });
 
                 let index = '';
@@ -128,7 +127,8 @@ const resolvers = {
                     }
                 });
 
-                if (lineToEdit.username == username) {
+                if (lineToEdit[0].username == context.user.username) {
+                    const username = context.user.username;
                     lineToEdit = { lineContent, username };
                     storyLines.splice(index, 1, lineToEdit);
 
