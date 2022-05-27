@@ -21,18 +21,18 @@
 
       .icon {
         width: 60px;
-        margin-right: 50px;
+        margin-right: 20px;
       }
 
       .item-container {
         display: flex;
         align-items: center;
-        margin-right: 50px;
+        margin-right: 4vw;
 
         .Tabs {
           text-decoration: none;
           color: black;
-          height: 100%;
+          width: 20vw;
         }
 
         .icon {
@@ -41,12 +41,13 @@
         }
 
         .searchbar {
-          width: 40vw;
+          width: 45vw;
           height: 35px;
         }
 
         .button {
           background-color: white;
+          border-radius: 8px;
           height: 7%;
           width: 3%;
           position: fixed;

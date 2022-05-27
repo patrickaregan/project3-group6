@@ -29,11 +29,11 @@ export default function Navbar() {
             <input type="text" placeholder="Search..." class="searchbar" />
           </div>
           <div class="item-container">
-            <input type="checkbox" id="navi-toggle" class="checkbox" />
-            <label for="navi-toggle" class="button">
+            <input type="checkbox" id="navToggle" class="checkbox" />
+            <label for="navToggle" class="button">
               <FontAwesomeIcon icon={faBars} class="icon" />
             </label>
-            <div class="background">&nbsp;</div>
+            <div class="background"></div>
             <nav class="nav">
               <ul class="list">
                 <li class="item">
