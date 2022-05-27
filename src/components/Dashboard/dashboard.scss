@@ -24,7 +24,7 @@
       grid-template-rows: 500px 100px;
       grid-template-columns: repeat(10, 1fr);
       align-items: center;
-      justify-items: center;
+      justify-items: end;
 
       .bookContainer {
         grid-row: 1 / 4;
@@ -40,10 +40,8 @@
         --items: 10;
         --middle: 5;
         --position: 1;
-        pointer-events: none;
       }
 
-      /* cell number */
       .bookCell {
         transform: rotateY(calc(-5deg * var(--r)))
           translateX(calc(-300px * var(--r)));
