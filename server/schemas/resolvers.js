@@ -14,7 +14,7 @@ const resolvers = {
                 return userData;
             }
         
-            throw new AuthenticationError('Not logged in');
+            throw new AuthenticationError("Not logged in");
         },
         users: async () => {
             return User.find()
@@ -68,42 +68,51 @@ const resolvers = {
             const deletedUser = await User.findByIdAndDelete({ _id });
             return deletedUser;
         },
-        addStory: async (parent, args) => {
-            const newStory = await Story.create(args);
-            const { storyTitle, username, _id } = newStory;
+        addStory: async (parent, args, context) => {
+            if (context.user) {
+                const newStory = await Story.create({ ...args, username: context.user.username });
+                const { storyTitle, _id } = newStory;
 
-            const storyCreator = await User.findOneAndUpdate(
-                { username: username },
-                { $push: { stories: { storyTitle, _id } } },
-                { new: true }
-            );
+                const storyCreator = await User.findByIdAndUpdate(
+                    { _id: context.user._id },
+                    { $push: { stories: { storyTitle, _id } } },
+                    { new: true }
+                );
 
-            if (args.writers) {
-                const [writers] = args.writers;
+                if (args.writers) {
+                    const [writers] = args.writers;
 
-                writers.forEach(writer => {
-                    User.findOneAndUpdate(
-                        { username: writer.username },
-                        { $push: { stories: { storyTitle, _id } } },
-                        { new: true }
-                    );
-                });
+                    writers.forEach(writer => {
+                        User.findOneAndUpdate(
+                            { username: writer.username },
+                            { $push: { stories: { storyTitle, _id } } },
+                            { new: true }
+                        );
+                    });
+                }
+
+                return { newStory, storyCreator };
             }
 
-            return { newStory, storyCreator };
+            throw new AuthenticationError("Not logged in");
         },
         removeStory: async (parent, { _id }) => {
             const deletedStory = await Story.findByIdAndDelete({ _id });
             return deletedStory;
         },
-        addLine: async (parent, { storyId, lineContent, username }) => {
-            const updatedStory = await Story.findByIdAndUpdate(
-                { _id: storyId },
-                { $push: { lines: { lineContent, username } } },
-                { new: true, runValidators: true }
-            );
+        addLine: async (parent, { storyId, lineContent }, context) => {
+            if (context.user) {
+                const username = context.user.username;
+                const updatedStory = await Story.findByIdAndUpdate(
+                    { _id: storyId },
+                    { $push: { lines: { lineContent, username } } },
+                    { new: true, runValidators: true }
+                );
 
-            return updatedStory;
+                return updatedStory;
+            }
+
+            throw new AuthenticationError("Not logged in");
         }
     }
 };

@@ -47,11 +47,11 @@ const typeDefs = gql`
 
     type Mutation {
         login(email: String!, password: String!): Auth
-        addUser(username: String!, email: String!, password: String!): User
+        addUser(username: String!, email: String!, password: String!): Auth
         removeUser(_id: ID!): User
         addStory(storyTitle: String!, username: String!, genre: String!, storyType: String!, lineCount: Int!, writers: [String]): Story
         removeStory(_id: ID!): Story
-        addLine(storyId: ID!, lineContent: String!, username: String!): Story
+        addLine(storyId: ID!, lineContent: String!): Story
     }
 `;
 
