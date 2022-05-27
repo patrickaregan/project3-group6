@@ -9,16 +9,21 @@ export default function Dashboard() {
           <h2>Your Stories</h2>
         </div>
         <div className="bookMain">
-          <input type="radio" name="position" className="inputBook" defaultChecked />
-          <input type="radio" name="position" className="inputBook"/>
-          <input type="radio" name="position" className="inputBook"/>
-          <input type="radio" name="position" className="inputBook"/>
-          <input type="radio" name="position" className="inputBook"/>
-          <input type="radio" name="position" className="inputBook"/>
-          <input type="radio" name="position" className="inputBook"/>
-          <input type="radio" name="position" className="inputBook"/>
-          <input type="radio" name="position" className="inputBook"/>
-          <input type="radio" name="position" className="inputBook"/>
+          <input
+            type="radio"
+            name="position"
+            className="inputBook"
+            defaultChecked
+          />
+          <input type="radio" name="position" className="inputBook" />
+          <input type="radio" name="position" className="inputBook" />
+          <input type="radio" name="position" className="inputBook" />
+          <input type="radio" name="position" className="inputBook" />
+          <input type="radio" name="position" className="inputBook" />
+          <input type="radio" name="position" className="inputBook" />
+          <input type="radio" name="position" className="inputBook" />
+          <input type="radio" name="position" className="inputBook" />
+          <input type="radio" name="position" className="inputBook" />
           <div className="bookContainer">
             <div className="bookCell"></div>
             <div className="bookCell"></div>

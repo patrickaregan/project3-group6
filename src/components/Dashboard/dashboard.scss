@@ -23,12 +23,14 @@
       display: grid;
       grid-template-rows: 500px 100px;
       grid-template-columns: repeat(10, 1fr);
+      column-count: 11;
+      column-gap: 1px;
       align-items: center;
-      justify-items: end;
+      justify-items: center;
 
       .bookContainer {
         grid-row: 1 / 4;
-        grid-column: 1 / 11;
+        grid-column: 1 / 12;
         width: 100vw;
         height: 500px;
         display: flex;
@@ -163,6 +165,35 @@
         --offset: 10;
         background-color: #90f1ef;
       }
+    }
+
+    input[type="radio"] {
+      display: grid;
+      appearance: none;
+      -webkit-appearance: none;
+      --form-control-color: #5a189a;
+      background-color: rgba(255, 255, 255, 0.5);
+      font: inherit;
+      width: 2px;
+      height: 2px;
+      padding: 13.5px;
+      border: 3px solid #5a189a;
+      border-radius: 30%;
+      place-content: center;
+    }
+
+    input[type="radio"]::before {
+      box-shadow: inset 100px 100px var(--form-control-color);
+      transition: 300ms transform ease-in-out;
+      border-radius: 30%;
+      transform: scale(0);
+      content: "";
+      width: 20px;
+      height: 20px;
+    }
+
+    input[type="radio"]:checked::before {
+      transform: scale(1);
     }
   }
 }
