@@ -14,7 +14,9 @@ export default function Login() {
             <h4>Or sign up <a href="signup">here</a></h4>
           </div>
         </div>
-        <div class="right"></div>
+        <div class="right">
+          <h2>INPUT CAROSEL HERE</h2>
+        </div>
       </div>
     </div>
   )
