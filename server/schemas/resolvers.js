@@ -128,16 +128,20 @@ const resolvers = {
                     }
                 });
 
-                lineToEdit = { lineContent, username };
-                storyLines.splice(index, 1, lineToEdit);
+                if (lineToEdit.username == username) {
+                    lineToEdit = { lineContent, username };
+                    storyLines.splice(index, 1, lineToEdit);
 
-                const updatedStory = await Story.findOneAndUpdate(
-                    { _id: storyId },
-                    { $set: { lines: storyLines } },
-                    { new: true }
-                );
+                    const updatedStory = await Story.findOneAndUpdate(
+                        { _id: storyId },
+                        { $set: { lines: storyLines } },
+                        { new: true }
+                    );
 
-                return updatedStory;
+                    return updatedStory;
+                } else {
+                    throw new AuthenticationError("Access denied.");
+                }
             }
 
             throw new AuthenticationError("You are not logged in!");
