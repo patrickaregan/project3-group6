@@ -33,7 +33,7 @@ const resolvers = {
 
     Mutation: {
         login: async (parent, { email, password }) => {
-            const user = await User.findOne({ email })
+            const user = await User.findOne({ email });
             if (!user) {
                 throw new AuthenticationError("Incorrect credentials.");
             }
@@ -58,20 +58,34 @@ const resolvers = {
         },
         addStory: async (parent, args) => {
             const newStory = await Story.create(args);
-            const [writers] = args.writers;
+            const { storyTitle, username, _id } = newStory;
 
-            writers.forEach(writer => {
-                User.findByIdAndUpdate(
-                    { _id: writer._id },
-                    { $push: { stories: newStory._id } },
-                    { new: true }
-                );
-            });
+            const storyCreator = await User.findOneAndUpdate(
+                { username: username },
+                { $push: { stories: { storyTitle, _id } } },
+                { new: true }
+            );
 
-            return newStory;
+            if (args.writers) {
+                const [writers] = args.writers;
+
+                writers.forEach(writer => {
+                    User.findOneAndUpdate(
+                        { username: writer.username },
+                        { $push: { stories: { storyTitle, _id } } },
+                        { new: true }
+                    );
+                });
+            }
+
+            return { newStory, storyCreator };
+        },
+        removeStory: async (parent, { _id }) => {
+            const deletedStory = await Story.findByIdAndDelete({ _id });
+            return deletedStory;
         },
         addLine: async (parent, { storyId, lineContent, username }) => {
-            const updatedStory = await Story.findOneAndUpdate(
+            const updatedStory = await Story.findByIdAndUpdate(
                 { _id: storyId },
                 { $push: { lines: { lineContent, username } } },
                 { new: true, runValidators: true }

@@ -12,13 +12,13 @@ const typeDefs = gql`
     type Story {
         _id: ID
         storyTitle: String
+        username: String
         createdAt: String
         genre: String
         storyType: String
         lineCount: Int
-        lines: [Line]
-        writerCount: Int
         writers: [User]
+        lines: [Line]
     }
 
     type Line {
@@ -26,6 +26,10 @@ const typeDefs = gql`
         lineContent: String
         username: String
         createdAt: String
+    }
+
+    type Writer {
+        username: String
     }
 
     type Auth {
@@ -44,7 +48,8 @@ const typeDefs = gql`
         login(email: String!, password: String!): Auth
         addUser(username: String!, email: String!, password: String!): User
         removeUser(_id: ID!): User
-        addStory(storyTitle: String!, genre: String!, storyType: String!, lineCount: String, writerCount: String, writers: [String!]): Story
+        addStory(storyTitle: String!, username: String!, genre: String!, storyType: String!, lineCount: Int!, writers: [String]): Story
+        removeStory(_id: ID!): Story
         addLine(storyId: ID!, lineContent: String!, username: String!): Story
     }
 `;
