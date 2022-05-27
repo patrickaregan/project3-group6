@@ -52,6 +52,7 @@ const typeDefs = gql`
         addStory(storyTitle: String!, genre: String!, storyType: String!, lineCount: Int!, writers: [String]): Story
         removeStory(_id: ID!): Story
         addLine(storyId: ID!, lineContent: String!): Story
+        editLine(storyId: ID!, lineId: ID!, lineContent: String!): Story
     }
 `;
 

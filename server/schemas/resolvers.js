@@ -113,6 +113,34 @@ const resolvers = {
             }
 
             throw new AuthenticationError("You are not logged in!");
+        },
+        editLine: async (parent, { storyId, lineId, lineContent }, context) => {
+            if (context.user) {
+                const username = context.user.username;
+                const story = await Story.findOne({ _id: storyId });
+
+                let index = '';
+                let storyLines = story.lines;
+                let lineToEdit = storyLines.filter((line, i) => {
+                    if (line._id == lineId) {
+                        index = i;
+                        return line;
+                    }
+                });
+
+                lineToEdit = { lineContent, username };
+                storyLines.splice(index, 1, lineToEdit);
+
+                const updatedStory = await Story.findOneAndUpdate(
+                    { _id: storyId },
+                    { $set: { lines: storyLines } },
+                    { new: true }
+                );
+
+                return updatedStory;
+            }
+
+            throw new AuthenticationError("You are not logged in!");
         }
     }
 };
