@@ -1,10 +1,15 @@
 .dashboardMain {
   .hero-container {
     background-image: url(https://t4.ftcdn.net/jpg/03/03/73/47/360_F_303734740_Us6tBZOZxqkfEmFgpf18Ti3gUIIGqo6A.jpg);
-    background-size: contain;
+    display: block;
+    background-size: cover;
     background-repeat: no-repeat;
-    height: 61.1vh;
+    background-position: center;
+    height: 60vh;
     width: 100vw;
+    line-height: 0%;
+    margin: 0%;
+    padding: 0%;
   }
   .scrolling-container {
     border: solid black 3px;
@@ -16,11 +21,11 @@
       border-radius: 20px;
       background-color: rgba(255, 255, 255, 0.5);
       width: 80vw;
+      margin-left: 8%;
     }
     .bookMain {
-      height: 600px;
-      margin: 0;
       display: grid;
+      height: 600px;
       grid-template-rows: 500px 100px;
       grid-template-columns: repeat(10, 1fr);
       column-count: 11;
@@ -36,7 +41,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        overflow: hidden;
         transform-style: preserve-3d;
         perspective: 650px;
         --items: 10;
@@ -174,9 +178,10 @@
       --form-control-color: #5a189a;
       background-color: rgba(255, 255, 255, 0.5);
       font: inherit;
-      width: 2px;
-      height: 2px;
-      padding: 13.5px;
+      width: 2vw;
+      height: 2vh;
+      padding: 2vh;
+      margin-left: 30vw;
       border: 3px solid #5a189a;
       border-radius: 30%;
       place-content: center;
@@ -184,12 +189,12 @@
 
     input[type="radio"]::before {
       box-shadow: inset 100px 100px var(--form-control-color);
-      transition: 300ms transform ease-in-out;
+      transition: 400ms transform ease-in-out;
       border-radius: 30%;
       transform: scale(0);
       content: "";
-      width: 20px;
-      height: 20px;
+      width: 1.3vw;
+      height: 2.8vh;
     }
 
     input[type="radio"]:checked::before {
