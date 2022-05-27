@@ -14,7 +14,7 @@ const resolvers = {
                 return userData;
             }
         
-            throw new AuthenticationError("Not logged in");
+            throw new AuthenticationError("You are not logged in!");
         },
         users: async () => {
             return User.find()
@@ -94,7 +94,7 @@ const resolvers = {
                 return { newStory, storyCreator };
             }
 
-            throw new AuthenticationError("Not logged in");
+            throw new AuthenticationError("You are not logged in!");
         },
         removeStory: async (parent, { _id }) => {
             const deletedStory = await Story.findByIdAndDelete({ _id });
@@ -112,7 +112,7 @@ const resolvers = {
                 return updatedStory;
             }
 
-            throw new AuthenticationError("Not logged in");
+            throw new AuthenticationError("You are not logged in!");
         }
     }
 };
