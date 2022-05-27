@@ -33,7 +33,7 @@ export default function Navbar() {
             <label for="navToggle" class="button">
               <FontAwesomeIcon icon={faBars} class="icon" />
             </label>
-            <div class="background"></div>
+            <div class="background"/>
             <nav class="nav">
               <ul class="list">
                 <li class="item">
@@ -43,7 +43,6 @@ export default function Navbar() {
             </nav>
           </div>
         </div>
-        <div class="right"></div>
       </div>
     </div>
   );
