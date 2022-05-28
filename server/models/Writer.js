@@ -7,6 +7,11 @@ const writerSchema = new Schema(
       required: true,
       trim: true
     }
+  },
+  {
+    toJSON: {
+      getters: true
+    }
   }
 );
 

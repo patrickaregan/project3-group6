@@ -17,7 +17,7 @@ const typeDefs = gql`
         genre: String
         storyType: String
         lineCount: Int
-        writers: [User]
+        writers: [Writer]
         lines: [Line]
     }
 
@@ -49,7 +49,8 @@ const typeDefs = gql`
         login(email: String!, password: String!): Auth
         addUser(username: String!, email: String!, password: String!): Auth
         removeUser(_id: ID!): User
-        addStory(storyTitle: String!, genre: String!, storyType: String!, lineCount: Int!, writers: [String]): Story
+        addStory(storyTitle: String!, genre: String!, storyType: String!, lineCount: Int!): Story
+        addWriter(storyId: ID!, username: String!): Story
         removeStory(_id: ID!): Story
         addLine(storyId: ID!, lineContent: String!): Story
         editLine(storyId: ID!, lineId: ID!, lineContent: String!): Story
