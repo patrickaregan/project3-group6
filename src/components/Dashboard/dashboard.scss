@@ -32,6 +32,7 @@
       column-gap: 1px;
       align-items: center;
       justify-items: center;
+      margin: 0px;
 
       .bookContainer {
         grid-row: 1 / 4;
@@ -57,8 +58,9 @@
         transition: all 0.25s linear;
         position: absolute;
         width: 300px;
-        height: 400px;
+        height: 460px;
       }
+      
       input:nth-of-type(1):checked ~ .bookContainer {
         --position: 1;
       }
@@ -68,7 +70,8 @@
       }
       div.bookCell:nth-of-type(1) {
         --offset: 1;
-        background-color: #90f1ef;
+        background-image: url(https://www.designforwriters.com/wp-content/uploads/2017/10/design-for-writers-book-cover-tf-2-a-million-to-one.jpg);
+        background-size: cover;
       }
       input:nth-of-type(2):checked ~ .bookContainer {
         --position: 2;
@@ -79,7 +82,8 @@
       }
       div.bookCell:nth-of-type(2) {
         --offset: 2;
-        background-color: #ff70a6;
+        background-image: url(http://www.designbookcover.pt/uploads/media/photos/cache/the_pen_and_the_sword_72_media_huge_thumbnail.jpg);
+        background-size: cover;
       }
       input:nth-of-type(3):checked ~ .bookContainer {
         --position: 3;
@@ -90,7 +94,8 @@
       }
       div.bookCell:nth-of-type(3) {
         --offset: 3;
-        background-color: #ff9770;
+        background-image: url(http://www.designbookcover.pt/uploads/media/photos/cache/jack_the_thieves_b1_72_media_huge_thumbnail.jpg);
+        background-size: cover;
       }
       input:nth-of-type(4):checked ~ .bookContainer {
         --position: 4;
@@ -101,7 +106,8 @@
       }
       div.bookCell:nth-of-type(4) {
         --offset: 4;
-        background-color: #ffd670;
+        background-image: url(http://www.designbookcover.pt/uploads/media/photos/cache/reckoning_72_media_huge_thumbnail.jpg);
+        background-size: cover;
       }
       input:nth-of-type(5):checked ~ .bookContainer {
         --position: 5;
@@ -112,7 +118,8 @@
       }
       div.bookCell:nth-of-type(5) {
         --offset: 5;
-        background-color: #08ad42;
+        background-image: url(https://dfb503wu29eo2.cloudfront.net/slir/w450/png24-front/bookcover0020964.jpg);
+        background-size: cover;
       }
       input:nth-of-type(6):checked ~ .bookContainer {
         --position: 6;
@@ -123,7 +130,8 @@
       }
       div.bookCell:nth-of-type(6) {
         --offset: 6;
-        background-color: #90f1ef;
+        background-image: url(https://levineleavitt.com/wp-content/uploads/2013/05/71-600x830.jpg);background-size: cover;
+        
       }
       input:nth-of-type(7):checked ~ .bookContainer {
         --position: 7;
@@ -134,7 +142,8 @@
       }
       div.bookCell:nth-of-type(7) {
         --offset: 7;
-        background-color: #90f1ef;
+        background-image: url(https://www.toplessrobot.com/wp-content/uploads/2010/05/pkd11.jpg);
+        background-size: cover;
       }
       input:nth-of-type(8):checked ~ .bookContainer {
         --position: 8;
@@ -145,7 +154,8 @@
       }
       div.bookCell:nth-of-type(8) {
         --offset: 8;
-        background-color: #90f1ef;
+        background-image: url(https://s26162.pcdn.co/wp-content/uploads/2018/03/2_ThePenultimateTruth05.jpg);
+        background-size: cover;
       }
       input:nth-of-type(9):checked ~ .bookContainer {
         --position: 9;
@@ -156,7 +166,8 @@
       }
       div.bookCell:nth-of-type(9) {
         --offset: 9;
-        background-color: #90f1ef;
+        background-image: url(https://i.pinimg.com/originals/81/d8/ab/81d8abee18613a908b0cf879e22b3716.jpg);
+        background-size: cover;
       }
       input:nth-of-type(10):checked ~ .bookContainer {
         --position: 10;
@@ -167,7 +178,8 @@
       }
       div.bookCell:nth-of-type(10) {
         --offset: 10;
-        background-color: #90f1ef;
+        background-image: url(https://d1csarkz8obe9u.cloudfront.net/posterpreviews/contemporary-fiction-night-time-book-cover-design-template-1be47835c3058eb42211574e0c4ed8bf_screen.jpg?ts=1637012564);
+        background-size: cover;
       }
     }
 
