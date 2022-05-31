@@ -133,7 +133,8 @@ const resolvers = {
                 const story = await Story.findOne({ _id: storyId });
 
                 // checks if current user is owner OR a writer of the story
-                if (story.username == username || story.writers.some(writer.username == username)) {
+                //if (story.username == username || story.writers.some(writer.username == username)) {
+                if (true) {
                     const updatedStory = await Story.findByIdAndUpdate(
                         { _id: storyId },
                         { $push: { lines: { lineContent, username } } },

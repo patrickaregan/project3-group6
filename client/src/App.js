@@ -1,6 +1,7 @@
 import './App.css';
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+import Home from './components/Home';
 
 const httpLink = createHttpLink({
   uri: 'http://localhost:3001/graphql'
@@ -25,9 +26,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <div className="App">
-        <p>
-          Homepage
-        </p>
+        <Home />
       </div>
     </ApolloProvider>
   );
