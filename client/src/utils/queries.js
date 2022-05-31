@@ -34,12 +34,9 @@ export const QUERY_STORIES = gql`
             genre
             storyType
             lineCount
-            writers {
-                _id
-                username
-            }
             lines {
                 _id
+                lineContent
                 username
                 createdAt
             }
