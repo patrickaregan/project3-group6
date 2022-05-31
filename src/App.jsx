@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Login from "./components/Login/Login";
 import Signup from "./components/Signup/Signup";
 import Dashboard from "./components/Dashboard/Dashboard.jsx";
+import MyAccount from "./components/MyAccount/MyAccount";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path='/' element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path='/dashboard' element={<Dashboard/>}/>
+          <Route path='/my_account' element={<MyAccount/>}/>
         </Routes>
       </Router>
     </div>

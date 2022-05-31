@@ -41,8 +41,8 @@ export default function Signup() {
             required
           />
         </div>
-        <button type="button" id="loginButton" href="Dashboard">
-          Sign up
+        <button type="button" id="loginButton">
+          <a href="Dashboard">Sign Up</a>
         </button>
       </div>
     </div>
