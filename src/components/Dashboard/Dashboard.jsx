@@ -1,4 +1,5 @@
 import "./dashboard.scss";
+import "./dashboard.js";
 
 export default function Dashboard() {
   return (
@@ -25,7 +26,7 @@ export default function Dashboard() {
           <input type="radio" name="position" className="inputBook" />
           <input type="radio" name="position" className="inputBook" />
           <div className="bookContainer">
-            <div className="bookCell"></div>
+            <div className="bookCell" id="book1"></div>
             <div className="bookCell"></div>
             <div className="bookCell"></div>
             <div className="bookCell"></div>
