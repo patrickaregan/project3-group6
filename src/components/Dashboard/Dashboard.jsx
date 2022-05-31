@@ -6,9 +6,6 @@ export default function Dashboard() {
     <div className="dashboardMain">
       <div className="hero-container"></div>
       <div className="scrolling-container">
-        <div className="scrollHeading">
-          <h2>Your Stories</h2>
-        </div>
         <div className="bookMain">
           <input
             type="radio"
