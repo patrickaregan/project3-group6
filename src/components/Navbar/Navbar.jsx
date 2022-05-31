@@ -20,8 +20,8 @@ export default function Navbar() {
             </a>
           </div>
           <div class="item-container">
-            <a href="#Community" class="Tabs">
-              Community
+            <a href="Dashboard" class="Tabs">
+              Dashboard
             </a>
           </div>
           <div class="item-container">
@@ -38,6 +38,7 @@ export default function Navbar() {
               <ul class="list">
                 <li class="item">
                   <a class="link" href="#MyAccont">My Account</a>
+                  <a class="link" href="#Community">Community</a>
                 </li>
               </ul>
             </nav>

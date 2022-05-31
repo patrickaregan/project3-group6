@@ -1,28 +1,8 @@
 .dashboardMain {
-  .hero-container {
-    background-image: url(https://t4.ftcdn.net/jpg/03/03/73/47/360_F_303734740_Us6tBZOZxqkfEmFgpf18Ti3gUIIGqo6A.jpg);
-    display: block;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 60vh;
-    width: 100vw;
-    line-height: 0%;
-    margin: 0%;
-    padding: 0%;
-  }
   .scrolling-container {
-    border: solid black 3px;
     background-image: url(https://wallpaperaccess.com/full/415267.jpg);
-    height: 60vh;
+    height: 100vh;
     width: 100vw;
-    .scrollHeading {
-      border: solid black 3px;
-      border-radius: 20px;
-      background-color: rgba(255, 255, 255, 0.5);
-      width: 80vw;
-      margin-left: 8%;
-    }
     .bookMain {
       display: grid;
       height: 600px;
@@ -38,7 +18,7 @@
         grid-row: 1 / 4;
         grid-column: 1 / 12;
         width: 100vw;
-        height: 500px;
+        height: 65vh;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -57,8 +37,8 @@
         --abs: max(calc(var(--r) * -1), var(--r));
         transition: all 0.25s linear;
         position: absolute;
-        width: 300px;
-        height: 460px;
+        width: 19.5%;
+        height: 100%;
       }
       
       input:nth-of-type(1):checked ~ .bookContainer {
