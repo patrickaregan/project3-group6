@@ -29,6 +29,7 @@ const Signup = () => {
       });
     
       Auth.login(data.addUser.token);
+      console.log("Signup successful for: " + formState.email);
       
     } catch (e) {
       console.error(e);

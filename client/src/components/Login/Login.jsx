@@ -28,6 +28,8 @@ const Login = () => {
       });
     
       Auth.login(data.login.token);
+      console.log("Login successful for: " + formState.email);
+
     } catch (e) {
       console.error(e);
     }
