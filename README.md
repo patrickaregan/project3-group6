@@ -17,6 +17,8 @@
 ## Description
 Story Team is a collaborative social networking site that allows authors to compose novels and stories as a team. Driven by the public community of inspiring writers, Story Team guarantees quality writing utensils and state-of-the-art online writing tools to assist productive workflow. Join today for an abundance of group-written stories made by people just like you!
 
+![Story Team Screenshot](https://user-images.githubusercontent.com/91916985/171487811-f492ac82-6e66-47c2-8fd6-ddcedce64083.png)
+
 ## Installation
 You will need to install necessary dependencies by running the following commands in your terminal:
 ```bash
