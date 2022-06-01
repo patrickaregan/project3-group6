@@ -1,33 +1,33 @@
 .mainCover {
-    height: 100vh;
-    width: 100vw;
-    background-image: url(https://images.unsplash.com/photo-1525947088131-b701cd0f6dc3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8d29vZCUyMHRleHR1cmV8ZW58MHx8MHx8&w=1000&q=80);
-    background-size: cover;
-    .sideCover {
-        padding-top: 8rem;
-        padding-left: 25rem;
-    }
+  height: 100vh;
+  width: 100vw;
+  background-image: url(https://images.unsplash.com/photo-1525947088131-b701cd0f6dc3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8d29vZCUyMHRleHR1cmV8ZW58MHx8MHx8&w=1000&q=80);
+  background-size: cover;
+  .sideCover {
+    padding-top: 8rem;
+    padding-left: 25rem;
+  }
 }
 
 .page {
-    background-image: url(https://st.depositphotos.com/1077310/1635/i/950/depositphotos_16353625-stock-photo-old-paper-background.jpg);
-    .page-content {
-        margin: 20px;
-        height: 90%;
-        width: 88%;
-        .page-header {
-            font-size: 26px;
-        }
-        .page-text {
-            border: solid rgba($color: #000000, $alpha: 0.3) 3px;
-            border-radius: 10px;
-            height: 88%;
-            width: 98%;
-        }
+  background-image: url(https://st.depositphotos.com/1077310/1635/i/950/depositphotos_16353625-stock-photo-old-paper-background.jpg);
+  .page-content {
+    margin: 20px;
+    height: 90%;
+    width: 88%;
+    .page-header {
+      font-size: 26px;
     }
+    .page-text {
+      border: solid rgba($color: #000000, $alpha: 0.3) 3px;
+      border-radius: 10px;
+      height: 88%;
+      width: 98%;
+    }
+  }
 }
 
 .pageCover {
-    background-image: url(https://www.designforwriters.com/wp-content/uploads/2017/10/design-for-writers-book-cover-tf-2-a-million-to-one.jpg);
-    background-size: cover;
+  background-image: url(https://www.designforwriters.com/wp-content/uploads/2017/10/design-for-writers-book-cover-tf-2-a-million-to-one.jpg);
+  background-size: cover;
 }
