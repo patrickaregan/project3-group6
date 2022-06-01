@@ -1,0 +1,61 @@
+[
+    {
+        
+        "storyTitle" : "Timeline of the American Revolution", 
+        "username" : "gwashington",
+		"genre" : "Non-Fiction",
+		"storyType" : "Free-For-All",
+		"lineCount" : 20,
+        "lines" : [ 
+            {
+                "lineContent" : "The American Revolution started in 1775.", 
+                "username" : "gwashington"
+            },
+            {
+                "lineContent" : "The American Revolution ended in 1783.", 
+                "username" : "jadams"
+            }
+        ],
+        "writers" : [ 
+            {
+                "username" : "gwashington"
+            },
+            {
+                "username" : "jadams"
+            }
+        ]
+    },
+	{
+        
+        "storyTitle" : "Great Quotes from American Presidents", 
+        "username" : "tjefferson",
+		"genre" : "Non-Fiction",
+		"storyType" : "Free-For-All",
+		"lineCount" : 20,
+        "lines" : [ 
+            {
+                "lineContent" : "Never put off till to-morrow what you can do to-day.", 
+                "username" : "tjefferson"
+            },
+            {
+                "lineContent" : "Every post is honorable in which a man can serve his country.", 
+                "username" : "gwashington"
+            },
+            {
+                "lineContent" : "Defeat appears to me preferable to total inaction.", 
+                "username" : "jadams"
+            }
+        ],
+        "writers" : [ 
+            {
+                "username" : "tjefferson"
+            },
+            {
+                "username" : "gwashington"
+            },
+            {
+                "username" : "jadams"
+            }
+        ]
+    }
+]

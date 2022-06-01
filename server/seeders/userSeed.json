@@ -1,0 +1,20 @@
+[
+    { 
+        "username" : "gwashington", 
+        "email" : "gwashington@usa.gov", 
+        "password" : "firstprez", 
+        "stories" : []
+    },
+    { 
+        "username" : "jadams", 
+        "email" : "jadams@usa.gov", 
+        "password" : "secondprez", 
+        "stories" : []
+    },
+    { 
+        "username" : "tjefferson", 
+        "email" : "tjefferson@usa.gov", 
+        "password" : "thirdprez", 
+        "stories" : []
+    }
+]
