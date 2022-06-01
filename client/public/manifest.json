@@ -1,0 +1,15 @@
+{
+    "short_name": "Story Team",
+    "name": "Story Team App",
+    "icons": [
+        {
+            "src": "book-icon.png",
+            "type": "image/png",
+            "sizes": "124x124"
+        }
+    ],
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#000000",
+    "background_color": "#ffffff"
+}
