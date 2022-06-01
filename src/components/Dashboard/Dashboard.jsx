@@ -23,7 +23,9 @@ export default function Dashboard() {
           <input type="radio" name="position" className="inputBook" />
           <input type="radio" name="position" className="inputBook" />
           <div className="bookContainer">
-            <div className="bookCell"></div>
+            <div className="bookCell">
+              <a href="/create">.</a>
+            </div>
             <div className="bookCell"></div>
             <div className="bookCell"></div>
             <div className="bookCell"></div>
