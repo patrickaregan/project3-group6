@@ -1,50 +1,84 @@
 import "./signup.scss";
+import Auth from '../../utils/auth';
+import React, { useState } from 'react';
+import { useMutation } from '@apollo/client';
+import { ADD_USER } from '../../utils/mutations'
 
-export default function Signup() {
+const Signup = () => {
+  const [formState, setFormState] = useState({ username: '', email: '', password: '' });
+  const [addUser, { error }] = useMutation(ADD_USER);
+
+  // update state based on form input changes
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
+
+  // submit form
+  const handleFormSubmit = async event => {
+    event.preventDefault();
+  
+    // use try/catch instead of promises to handle errors
+    try {
+      const { data } = await addUser({
+        variables: { ...formState }
+      });
+    
+      Auth.login(data.addUser.token);
+      
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
   return (
-    <div class="signup">
-      <div class="form">
+    <div className="signup">
+      <div className="form">
+      <form onSubmit={handleFormSubmit}>
         <h2>Sign Up</h2>
-        <div class="form-item">
+        <div className="form-item">
           <input
             type="text"
-            class="username"
+            className="username"
             placeholder="Username"
+            name="username"
             id="username"
-            required
+            value={formState.username}
+            onChange={handleChange}
           />
         </div>
-        <div class="form-item">
+        <input
+            className='email'
+            placeholder='email'
+            name='email'
+            type='email'
+            id='email'
+            value={formState.email}
+            onChange={handleChange}
+        />
+        <div className="form-item">
           <input
-            type="text"
-            class="password"
+            type="password"
+            className="password"
             placeholder="Password"
+            name='password'
             id="password"
-            required
+            value={formState.password}
+            onChange={handleChange}
           />
         </div>
-        <div class="form-item">
-          <input
-            type="text"
-            class="confirmUsername"
-            placeholder="Confirm Username"
-            id="confirmUsername"
-            required
-          />
-        </div>
-        <div class="form-item">
-          <input
-            type="text"
-            class="confirmPassword"
-            placeholder="Confirm Password"
-            id="confirmPassword"
-            required
-          />
-        </div>
-        <button type="button" id="loginButton">
-          <a href="Dashboard">Sign Up</a>
+        <button type="submit" id="loginButton">
+          Sign Up
         </button>
+        </form>
+        {error && <div>Sign up failed</div>}
       </div>
     </div>
   );
 }
+
+export default Signup;
