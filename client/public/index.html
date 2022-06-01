@@ -9,6 +9,7 @@
       href="https://fonts.googleapis.com/css2?family=Macondo&display=swap"
       rel="stylesheet"
     />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <style>
       * {
         font-family: "Macondo", cursive;
@@ -21,6 +22,15 @@
   <body>
     <div id="root"></div>
   </body>
+  <script>
+    (function() {
+      if("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("%PUBLIC_URL%/service-worker.js")
+          .then(() => console.log("Service Worker registered successfully."))
+          .catch(error => console.log("Service Worker registration failed:", error));
+      }
+    })();
+  </script>
 </html>
 
 
