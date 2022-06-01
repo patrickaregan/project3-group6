@@ -1,5 +1,4 @@
 import "./dashboard.scss";
-import "./dashboard.js";
 
 export default function Dashboard() {
   return (
